@@ -17,7 +17,7 @@ Namespace ExtendModel.Module.Win.Controllers
 				If gridListEditor IsNot Nothing Then
 					Dim gridView As GridView = gridListEditor.GridView
 					For i As Integer = 0 To gridView.GroupSummary.Count - 1
-						Dim modelColumn As IModelColumnExtender = TryCast(View.Model.Columns(gridView.GroupSummary(i).FieldName), IModelColumnExtender)
+						Dim modelColumn As IModelColumnExtender = TryCast(CType(View.Model.Columns, IModelList(Of IModelColumn))(gridView.GroupSummary(i).FieldName), IModelColumnExtender)
 						If modelColumn IsNot Nothing Then
 							modelColumn.GroupFooterSummaryType = gridView.GroupSummary(i).SummaryType
 						End If
