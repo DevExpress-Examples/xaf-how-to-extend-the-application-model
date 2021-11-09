@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 
@@ -9,9 +8,9 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("ExtendModel.Web")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyConfiguration("")>
-<Assembly: AssemblyCompany("-")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("ExtendModel.Web")>
-<Assembly: AssemblyCopyright("Copyright © - 2008")>
+<Assembly: AssemblyCopyright("Copyright © 2021")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
 

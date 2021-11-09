@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace ExtendModel.Module.Win
+﻿Namespace ExtendModel.Module.Win
 	Partial Public Class ExtendModelWindowsFormsModule
 		''' <summary> 
 		''' Required designer variable.
@@ -30,7 +28,6 @@ Namespace ExtendModel.Module.Win
 			' 
 			Me.RequiredModuleTypes.Add(GetType(ExtendModel.Module.ExtendModelModule))
 			Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule))
-
 		End Sub
 
 		#End Region

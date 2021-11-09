@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace ExtendModel.Win
+﻿Namespace ExtendModel.Win
 	Partial Public Class ExtendModelWindowsFormsApplication
 		''' <summary> 
 		''' Required designer variable.
@@ -29,28 +27,24 @@ Namespace ExtendModel.Win
 			Me.module2 = New DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule()
 			Me.module3 = New ExtendModel.Module.ExtendModelModule()
 			Me.module4 = New ExtendModel.Module.Win.ExtendModelWindowsFormsModule()
-			Me.module5 = New DevExpress.ExpressApp.Validation.ValidationModule()
-			Me.module6 = New DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule()
-			Me.module7 = New DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule()
-			Me.securityModule1 = New DevExpress.ExpressApp.Security.SecurityModule()
+			Me.objectsModule = New DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule()
 			CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
-			' 
-			' module5
-			' 
-			Me.module5.AllowValidationDetailsAccess = True
 			' 
 			' ExtendModelWindowsFormsApplication
 			' 
 			Me.ApplicationName = "ExtendModel"
+			Me.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema
 			Me.Modules.Add(Me.module1)
 			Me.Modules.Add(Me.module2)
-			Me.Modules.Add(Me.module6)
 			Me.Modules.Add(Me.module3)
 			Me.Modules.Add(Me.module4)
-			Me.Modules.Add(Me.module5)
-			Me.Modules.Add(Me.module7)
-			Me.Modules.Add(Me.securityModule1)
-'			Me.DatabaseVersionMismatch += New System.EventHandler(Of DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)(Me.ExtendModelWindowsFormsApplication_DatabaseVersionMismatch);
+			Me.Modules.Add(Me.objectsModule)
+			Me.UseOldTemplates = False
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ExtendModelWindowsFormsApplication_DatabaseVersionMismatch);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ExtendModelWindowsFormsApplication_CustomizeLanguagesList);
+
 			CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
 		End Sub
@@ -61,9 +55,6 @@ Namespace ExtendModel.Win
 		Private module2 As DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule
 		Private module3 As ExtendModel.Module.ExtendModelModule
 		Private module4 As ExtendModel.Module.Win.ExtendModelWindowsFormsModule
-		Private module5 As DevExpress.ExpressApp.Validation.ValidationModule
-		Private module6 As DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule
-		Private module7 As DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule
-		Private securityModule1 As DevExpress.ExpressApp.Security.SecurityModule
+		Private objectsModule As DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule
 	End Class
 End Namespace

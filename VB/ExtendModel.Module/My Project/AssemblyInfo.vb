@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 
@@ -9,9 +8,9 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("ExtendModel.Module")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyConfiguration("")>
-<Assembly: AssemblyCompany("-")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("ExtendModel.Module")>
-<Assembly: AssemblyCopyright("Copyright © - 2007")>
+<Assembly: AssemblyCopyright("Copyright © 2021")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
 
@@ -27,6 +26,8 @@ Imports System.Runtime.InteropServices
 '      Build Number
 '      Revision
 '
-' You can specify all the values or you can default the Revision and Build Numbers 
+' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
+
 <Assembly: AssemblyVersion("1.0.*")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

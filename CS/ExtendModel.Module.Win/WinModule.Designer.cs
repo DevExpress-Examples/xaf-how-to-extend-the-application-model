@@ -1,4 +1,4 @@
-namespace ExtendModel.Module.Win {
+﻿namespace ExtendModel.Module.Win {
     partial class ExtendModelWindowsFormsModule {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,6 @@ namespace ExtendModel.Module.Win {
             // 
             this.RequiredModuleTypes.Add(typeof(ExtendModel.Module.ExtendModelModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
-
         }
 
         #endregion

@@ -1,4 +1,4 @@
-namespace ExtendModel.Module.Web {
+﻿namespace ExtendModel.Module.Web {
     partial class ExtendModelAspNetModule {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,6 @@ namespace ExtendModel.Module.Web {
             // 
             this.RequiredModuleTypes.Add(typeof(ExtendModel.Module.ExtendModelModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
-
         }
 
         #endregion

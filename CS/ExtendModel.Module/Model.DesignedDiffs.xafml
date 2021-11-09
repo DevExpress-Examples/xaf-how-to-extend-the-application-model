@@ -1,25 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="ExtendModel" Logo="ExpressAppLogo">
+<Application Title="ExtendModel">
   <NavigationItems>
     <Items>
       <Item Id="Default" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="Person" IsNewNode="True" ViewId="Person_ListView" />
+          <Item Id="Person" ViewId="Person_ListView" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="10.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.15.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
-    <ListView Id="Person_ListView" IsGroupFooterVisible="True" IsGroupPanelVisible="True" GroupSummary="Ascending">
+    <ListView Id="Person_ListView" IsGroupPanelVisible="True" IsGroupFooterVisible="True">
       <Columns>
         <ColumnInfo Id="Email" Index="-1" />
         <ColumnInfo Id="LastName" Index="-1" />
         <ColumnInfo Id="MiddleName" Index="-1" />
         <ColumnInfo Id="FullName" GroupFooterSummaryType="Count" />
-        <ColumnInfo Id="FirstName" GroupIndex="0" />
+        <ColumnInfo Id="FirstName" SortOrder="Ascending" GroupIndex="0" Index="1" />
+        <ColumnInfo Id="Birthday" Index="2" />
       </Columns>
     </ListView>
   </Views>

@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports DevExpress.Data
+﻿Imports DevExpress.Data
 Imports System.ComponentModel
 
 Namespace ExtendModel.Module
@@ -7,7 +6,7 @@ Namespace ExtendModel.Module
 		Property IsGroupFooterVisible() As Boolean
 	End Interface
 	Public Interface IModelColumnExtender
-		<DefaultValue(SummaryItemType.None)> _
+		<DefaultValue(SummaryItemType.None)>
 		Property GroupFooterSummaryType() As SummaryItemType
 	End Interface
 End Namespace

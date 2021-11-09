@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Configuration;
 using System.Web.Configuration;
 using System.Web;
@@ -8,7 +8,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
-using WinWebSolution.Module;
+using DevExpress.Web;
 
 namespace ExtendModel.Web {
     public class Global : System.Web.HttpApplication {
@@ -16,36 +16,33 @@ namespace ExtendModel.Web {
             InitializeComponent();
         }
         protected void Application_Start(Object sender, EventArgs e) {
-            
-
+            ASPxWebControl.CallbackError += new EventHandler(Application_Error);
 #if EASYTEST
-			DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
-			ConfirmationsHelper.IsConfirmationsEnabled = false;
+            DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
 #endif
-
         }
         protected void Session_Start(Object sender, EventArgs e) {
+            Tracing.Initialize();
             WebApplication.SetInstance(Session, new ExtendModelAspNetApplication());
-            WebApplication.Instance.ConnectionString = CodeCentralExampleInMemoryDataStoreProvider.ConnectionString;
-#if EASYTEST
-			if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
-				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
-			}
-#endif
+            DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
+            WebApplication.Instance.SwitchToNewStyle();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
-            DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register();
-                        WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
+#if EASYTEST
+            if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
+                WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
+            }
+#endif
+#if DEBUG
+            if(System.Diagnostics.Debugger.IsAttached && WebApplication.Instance.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
+                WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            }
+#endif
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }
         protected void Application_BeginRequest(Object sender, EventArgs e) {
-            string filePath = HttpContext.Current.Request.PhysicalPath;
-            if(!string.IsNullOrEmpty(filePath)
-                && (filePath.IndexOf("Images") >= 0) && !System.IO.File.Exists(filePath)) {
-                HttpContext.Current.Response.End();
-            }
         }
         protected void Application_EndRequest(Object sender, EventArgs e) {
         }

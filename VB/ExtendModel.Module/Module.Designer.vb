@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace ExtendModel.Module
+﻿Namespace ExtendModel.Module
 	Partial Public Class ExtendModelModule
 		''' <summary> 
 		''' Required designer variable.
@@ -29,6 +27,14 @@ Namespace ExtendModel.Module
 			' ExtendModelModule
 			' 
 			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Person))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Party))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.BaseObject))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Address))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.PhoneNumber))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Xpo.XPCustomObject))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Xpo.XPBaseObject))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Xpo.PersistentBase))
+			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Country))
 			Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.SystemModule.SystemModule))
 			Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule))
 

@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace ExtendModel.Module.Web
+﻿Namespace ExtendModel.Module.Web
 	Partial Public Class ExtendModelAspNetModule
 		''' <summary> 
 		''' Required designer variable.
@@ -30,7 +28,6 @@ Namespace ExtendModel.Module.Web
 			' 
 			Me.RequiredModuleTypes.Add(GetType(ExtendModel.Module.ExtendModelModule))
 			Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule))
-
 		End Sub
 
 		#End Region
