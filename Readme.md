@@ -20,4 +20,4 @@ This example demonstrates how to extend the Application Model. The IsGroupFooter
 ## Documentation 
 * [Application Model Basics](https://docs.devexpress.com/eXpressAppFramework/112580/ui-construction/application-model/application-model-basics)
 * [How to: Extend the Application Model](https://docs.devexpress.com/eXpressAppFramework/112785/ui-construction/application-model/how-to-extend-the-application-model)
-* [Extend and Customize the Application Model in Code](https://docs.devexpress.com/eXpressAppFramework/113169/ui-construction/application-model/extend-and-customize-the-application-model-in-code)
+* <a href="https://docs.devexpress.com/eXpressAppFramework/403527/ui-construction/application-model-ui-settings-storage/change-application-model">Change the Application Model</a>
