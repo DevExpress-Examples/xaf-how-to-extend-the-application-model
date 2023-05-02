@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="ExtendModel">
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="22.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Contact_ListView" IsGroupFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Age" GroupFooterSummaryType="Sum" />
+        <ColumnInfo Id="Type" GroupIndex="0" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
