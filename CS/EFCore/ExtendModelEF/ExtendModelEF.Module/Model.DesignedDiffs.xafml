@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" ?>
 <Application Title="ExtendModelEF">
-  <Views>
-  </Views>
+	<Views>
+		<ListView Id="Contact_ListView" IsGroupFooterVisible="True">
+			<Columns>
+				<ColumnInfo Id="FirstName" GroupFooterSummaryType="Count" />
+				<ColumnInfo Id="Age" GroupFooterSummaryType="Sum" />
+				<ColumnInfo Id="TestInt" GroupFooterSummaryType="Max" />
+				<ColumnInfo Id="Type" GroupIndex="0" />
+			</Columns>
+		</ListView>
+	</Views>
 </Application>

@@ -5,6 +5,7 @@ using DevExpress.Persistent.BaseImpl.EF.PermissionPolicy;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.ExpressApp.Design;
 using DevExpress.ExpressApp.EFCore.DesignTime;
+using dxTestSolution.Module.BusinessObjects;
 
 namespace ExtendModelEF.Module.BusinessObjects;
 
@@ -34,7 +35,7 @@ public class ExtendModelEFDesignTimeDbContextFactory : IDesignTimeDbContextFacto
 public class ExtendModelEFEFCoreDbContext : DbContext {
 	public ExtendModelEFEFCoreDbContext(DbContextOptions<ExtendModelEFEFCoreDbContext> options) : base(options) {
 	}
-	//public DbSet<ModuleInfo> ModulesInfo { get; set; }
+	public DbSet<Contact> Contacts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);

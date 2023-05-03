@@ -4,6 +4,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.EF;
 using DevExpress.Persistent.BaseImpl.EF;
+using dxTestSolution.Module.BusinessObjects;
 
 namespace ExtendModelEF.Module.DatabaseUpdate;
 
@@ -14,14 +15,19 @@ public class Updater : ModuleUpdater {
     }
     public override void UpdateDatabaseAfterUpdateSchema() {
         base.UpdateDatabaseAfterUpdateSchema();
-        //string name = "MyName";
-        //EntityObject1 theObject = ObjectSpace.FirstOrDefault<EntityObject1>(u => u.Name == name);
-        //if(theObject == null) {
-        //    theObject = ObjectSpace.CreateObject<EntityObject1>();
-        //    theObject.Name = name;
-        //}
-
-		//ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
+        var cnt = ObjectSpace.GetObjects<Contact>().Count;
+        if (cnt > 0) {
+            return;
+        }
+        for (int i = 0; i < 5; i++) {
+            var contact = ObjectSpace.CreateObject<Contact>();
+            contact.FirstName = "FirstName" + i;
+            contact.LastName = "LastName" + i;
+            contact.Age = i * 10;
+            contact.Type = i % 2 == 0;
+            contact.TestInt = i * 100;
+        }
+        ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
     }
     public override void UpdateDatabaseBeforeUpdateSchema() {
         base.UpdateDatabaseBeforeUpdateSchema();
