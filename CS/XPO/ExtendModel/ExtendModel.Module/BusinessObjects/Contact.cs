@@ -44,15 +44,26 @@ namespace dxTestSolution.Module.BusinessObjects {
                 SetPropertyValue(nameof(LastName), ref _lastName, value);
             }
         }
-        int _age;
         private bool type;
 
+
+        int _age;
         public int Age {
             get {
                 return _age;
             }
             set {
                 SetPropertyValue(nameof(Age), ref _age, value);
+            }
+        }
+
+        int _testInt;
+        public int TestInt {
+            get {
+                return _testInt;
+            }
+            set {
+                SetPropertyValue(nameof(TestInt), ref _testInt, value);
             }
         }
 

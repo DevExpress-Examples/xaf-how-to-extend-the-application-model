@@ -22,23 +22,24 @@ namespace ExtendModel.Module.Win.Controllers {
                     var gridModel = gridAdapter.GridModel;
                     gridModel.ShowGroupPanel = true;
                     gridModel.ShowGroupedColumns = true;
-                    var oldSummary = gridModel.GroupSummary;
+                    
 
 
-
+                    int k = 0;
                     foreach (IModelColumn modelColumn in View.Model.Columns) {
                         IModelColumnExtender modelColumnExtender = modelColumn as IModelColumnExtender;
                         if (modelColumnExtender != null && modelColumnExtender.GroupFooterSummaryType != DevExpress.Data.SummaryItemType.None) {
-                            gridModel.GroupSummary = CreateSummary(oldSummary, modelColumnExtender.GroupFooterSummaryType, modelColumn.PropertyName);
+                            var oldSummary = gridModel.GroupSummary;
+                            gridModel.GroupSummary = CreateSummary(oldSummary, modelColumnExtender.GroupFooterSummaryType, modelColumn.PropertyName,k++);
                         }
                     }
                 }
             }
         }
-        private RenderFragment CreateSummary(RenderFragment oldSummary, DevExpress.Data.SummaryItemType summaryItemType, string propertyName) {
+        private RenderFragment CreateSummary(RenderFragment oldSummary, DevExpress.Data.SummaryItemType summaryItemType, string propertyName,int index) {
             return builder => {
                 oldSummary(builder);
-                builder.OpenComponent<DxGridSummaryItem>(0);
+                builder.OpenComponent<DxGridSummaryItem>(index);
                 switch (summaryItemType) {
                     case DevExpress.Data.SummaryItemType.Sum:
                         builder.AddAttribute(1, nameof(DxGridSummaryItem.SummaryType), GridSummaryItemType.Sum);

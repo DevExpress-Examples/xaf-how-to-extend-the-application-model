@@ -8,6 +8,7 @@
       <Columns>
         <ColumnInfo Id="FirstName" GroupFooterSummaryType="Count" />
         <ColumnInfo Id="Age" GroupFooterSummaryType="Sum" />
+        <ColumnInfo Id="TestInt" GroupFooterSummaryType="Max" />
         <ColumnInfo Id="Type" GroupIndex="0" />
       </Columns>
     </ListView>

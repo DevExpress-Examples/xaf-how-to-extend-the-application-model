@@ -32,6 +32,7 @@ public class Updater : ModuleUpdater {
             contact.LastName = "LastName" + i;
             contact.Age = i * 10;
             contact.Type = i % 2 == 0;
+            contact.TestInt = i * 100;
         }
         ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
     }
