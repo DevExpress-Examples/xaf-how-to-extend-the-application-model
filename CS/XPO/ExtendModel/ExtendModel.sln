@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendModel.Blazor.Server", "ExtendModel.Blazor.Server\ExtendModel.Blazor.Server.csproj", "{60163AC0-FAB7-4DE5-9F84-89A2FE9EF8C3}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendModel.Module", "ExtendModel.Module\ExtendModel.Module.csproj", "{7BBE0AEF-D338-4204-816A-A43E4CA3A123}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendModel.Win", "ExtendModel.Win\ExtendModel.Win.csproj", "{049FDD72-EA44-481C-A66C-85595FC285DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendModel.Blazor.Server", "ExtendModel.Blazor.Server\ExtendModel.Blazor.Server.csproj", "{60163AC0-FAB7-4DE5-9F84-89A2FE9EF8C3}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
