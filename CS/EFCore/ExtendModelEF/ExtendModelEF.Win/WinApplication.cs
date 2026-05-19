@@ -18,7 +18,6 @@ public class ExtendModelEFWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "ExtendModelEF";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += ExtendModelEFWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += ExtendModelEFWindowsFormsApplication_CustomizeLanguagesList;
     }

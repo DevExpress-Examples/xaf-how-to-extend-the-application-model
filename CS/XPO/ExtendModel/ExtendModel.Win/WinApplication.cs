@@ -14,7 +14,6 @@ public class ExtendModelWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "ExtendModel";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += ExtendModelWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += ExtendModelWindowsFormsApplication_CustomizeLanguagesList;
     }
