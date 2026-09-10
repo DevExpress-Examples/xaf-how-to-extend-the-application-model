@@ -5,7 +5,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
-using dxTestSolution.Module.BusinessObjects;
+using ExtendModel.Module.BusinessObjects;
 
 namespace ExtendModel.Module.DatabaseUpdate;
 
