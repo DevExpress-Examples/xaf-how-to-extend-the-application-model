@@ -9,15 +9,12 @@ using DevExpress.XtraGrid.Columns;
 namespace ExtendModel.Module.Win.Controllers {
     public class WinGroupFooterViewController : ViewController<ListView> {
         private void View_ModelSaved(object sender, EventArgs e) {
-            IModelListViewExtender modelListView = View.Model as IModelListViewExtender;
-            if (modelListView != null && modelListView.IsGroupFooterVisible) {
-                GridListEditor gridListEditor = View.Editor as GridListEditor;
-                if (gridListEditor != null) {
+            if (View.Model is IModelListViewExtender modelListView && modelListView.IsGroupFooterVisible) {
+                if (View.Editor is GridListEditor gridListEditor) {
                     GridView gridView = gridListEditor.GridView;
                     for (int i = 0; i < gridView.GroupSummary.Count; i++) {
-                        IModelColumnExtender modelColumn = View.Model.Columns[
-                            gridView.GroupSummary[i].FieldName] as IModelColumnExtender;
-                        if (modelColumn != null) {
+                        if (View.Model.Columns[
+                            gridView.GroupSummary[i].FieldName] is IModelColumnExtender modelColumn) {
                             modelColumn.GroupFooterSummaryType = gridView.GroupSummary[i].SummaryType;
                         }
                     }
@@ -26,20 +23,13 @@ namespace ExtendModel.Module.Win.Controllers {
         }
         protected override void OnViewControlsCreated() {
             base.OnViewControlsCreated();
-            IModelListViewExtender modelListView = View.Model as IModelListViewExtender;
-            if (modelListView != null && modelListView.IsGroupFooterVisible) {
-                GridListEditor gridListEditor = View.Editor as GridListEditor;
-                if (gridListEditor != null) {
+            if (View.Model is IModelListViewExtender modelListView && modelListView.IsGroupFooterVisible) {
+                if (View.Editor is GridListEditor gridListEditor) {
                     GridView gridView = gridListEditor.GridView;
                     gridView.OptionsView.GroupFooterShowMode = GroupFooterShowMode.VisibleAlways;
-                    foreach (IModelColumn modelColumn in View.Model.Columns) {
-                        IModelColumnExtender modelColumnExtender = modelColumn as IModelColumnExtender;
-                        if (modelColumnExtender != null &&
-                            modelColumnExtender.GroupFooterSummaryType != SummaryItemType.None) {
-                            GridColumn gridColumn = gridView.Columns[
-                                modelColumn.ModelMember.MemberInfo.BindingName];
-                            gridView.GroupSummary.Add(modelColumnExtender.GroupFooterSummaryType,
-                                modelColumn.Id, gridColumn);
+                    foreach (var column in gridListEditor.Columns) {
+                        if (column.ModelColumn is IModelColumnExtender modelColumnExtender && modelColumnExtender.GroupFooterSummaryType != SummaryItemType.None) {
+                            gridView.GroupSummary.Add(modelColumnExtender.GroupFooterSummaryType, column.Id, column.Column);
                         }
                     }
                 }
